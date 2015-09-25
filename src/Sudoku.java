@@ -44,15 +44,22 @@ public class Sudoku {
 	
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
 		
 		TextFileLineParser lp = new TextFileLineParser("1sudoku.txt");
 		ArrayList<String> sudokus = lp.getLines();
 		Sudoku s = new Sudoku(sudokus.get(0));
+		
+		Rules rules = new Rules(); 
+		
+		System.out.println(rules.legalChoices(s.grid, 0, 2));
+		
+		
 		System.out.println(s);
 		
 		
-		BreadthFirstSearch BFSearch = new BreadthFirstSearch();
+		
+		
+		//BreadthFirstSearch BFSearch = new BreadthFirstSearch();
 		
 		//HillClimbingSearch HCsearch = new HillClimbingSearch(null);
 		//AStarSearch ASSearch = new AStarSearch(null, null);
