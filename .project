@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>aima-java-AIMA3e</name>
+			<type>2</type>
+			<location>C:/Users/Francis/Google Drive/Intelligence Artificielle/aima-java-AIMA3e</location>
+		</link>
+	</linkedResources>
 </projectDescription>
