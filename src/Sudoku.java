@@ -51,7 +51,7 @@ public class Sudoku {
 		
 		Rules rules = new Rules(); 
 		
-		System.out.println(rules.legalChoices(s.grid, 0, 2));
+		System.out.println(rules.legalChoices(s.grid, 8, 0));
 		
 		
 		System.out.println(s);

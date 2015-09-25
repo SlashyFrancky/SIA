@@ -13,29 +13,20 @@ public class Rules {
 		
 		for (int a=0; a < tempGrid.length; a++ ){
 			if (tempGrid[i][a] == choice){
-				if (a !=j){
-					System.out.println("a" + choice + a);
-					return false;
-				}
+				if (a !=j) return false;
 			} 
 		}
 		
 		for (int a=0; a < tempGrid.length; a++ ){
 			if (tempGrid[a][j] == choice){
-				if (a !=i){
-					System.out.println("b" + choice + a);
-					return false;
-				}
+				if (a !=i) return false;
 			} 
 		}
 		
 		for (int a=i/3; a < i/3+3; a++ ){
 			for(int b=j/3; b < j/3+3; b++ )
 				if (tempGrid[a][b] == choice){
-					if (a !=i && b != j){
-						System.out.println("c" + choice + a + b);
-						return false;
-					}
+					if (a !=i && b != j) return false;
 				} 
 		}
 		return true;
