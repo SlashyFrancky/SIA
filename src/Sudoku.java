@@ -10,7 +10,9 @@ public class Sudoku {
 		String test = "Hello World";
 		System.out.println(test);
 		
-		HillClimbingSearch search = new HillClimbingSearch(null); 
+		BreadthFirstSearch BFSearch = new BreadthFirstSearch(null);
+		HillClimbingSearch HCsearch = new HillClimbingSearch(null);
+		AStarSearch ASSearch = new AStarSearch(null, null);
 	}
 
 }
