@@ -7,13 +7,40 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
 public class Sudoku {
 	
-	public Sudoku(){
-		
+	private static int SIZE = 9;  
+	int[][] grid; 
+	
+	public Sudoku(String s){
+		this.grid = createGrid(s);
 	}
 	
+	public int[][] createGrid(String s){
+		int[][] grid = new int[SIZE][SIZE];
+		int n=0; 
+		
+		for(int i=0; i<SIZE; i++){
+			for(int j=0; j<SIZE; j++){
+				grid[i][j] = Character.getNumericValue(s.charAt(n));
+				n++; 
+			}
+		}
+		return grid;
+	}
+	
+	public String toString(){
+		String s = " - - - - - - - - - " + "\n"; 
+		
+		for(int i=0; i<SIZE; i++){
+			for(int j=0; j<SIZE; j++){
+				s += "|" + this.grid[i][j]; 
+			}
+			s += "|" + "\n";
+		} 
+		s += " - - - - - - - - - " + "\n";
+		return s;
+	}
 	
 
 	public static void main(String[] args) throws IOException {
@@ -21,9 +48,8 @@ public class Sudoku {
 		
 		TextFileLineParser lp = new TextFileLineParser("1sudoku.txt");
 		ArrayList<String> sudokus = lp.getLines();
-		
-		System.out.println(sudokus);
-		
+		Sudoku s = new Sudoku(sudokus.get(0));
+		System.out.println(s);
 		
 		
 		BreadthFirstSearch BFSearch = new BreadthFirstSearch();
